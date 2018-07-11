@@ -1,7 +1,7 @@
-<b>Anstractization</b>
+Anstractization
 After you create a Car class, you realize you have more types of cars, you can abstract it keeping the most general fields/methods in the abstract class 
 
 
-<b>Encapsulation</b>
+Encapsulation
 The process of making methods/fields private if not derectly used. 
 Some methods are just helpers so they can be encapsulated.
