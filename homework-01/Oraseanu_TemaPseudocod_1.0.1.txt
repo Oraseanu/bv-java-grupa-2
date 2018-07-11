@@ -1,0 +1,333 @@
+/* Schimbari: 
+* 04. am folosit 2 numere in loc de un sir
+* 05. am facut un singur "for" si am renuntat la switch 1
+* 10. am modificat programul sa arate sirul fibonacci corect: "112358.." in loc de "12358.."
+* Am modificat testele la toate cele 3 pnucte.
+*/
+Implement in pseudo-code the following algorithms:
+
+1. Calculate the sum of the first 100 numbers higher than 0
+
+	program "SumOfFirstHundredNumbers" is:
+	start
+		s=0
+		for(i=1;1<=100;i++)
+			s=s+i
+	end
+
+	---test:
+		s=0; 
+			i = 1; s = 1;
+			i = 2; s =(1+2);
+			i = 3; s =(1+2)+3;
+			i = 4; s =((1+2)+3)+4;
+			...
+			i=100; s = 5050
+	
+2. Display the smallest number from a collections of numbers
+
+	program "SmallestNumberFromCollections" is:
+	start
+		read colection
+		min=colection[0]
+		for(i = 1; i < colection.size; i++)
+			if (colection[i]<min)
+				then
+					min=colection[i]
+		write min
+	end
+
+	---test: colection = [23, 56, 76, 3, 11, 12]  / colection.size = 6
+		min = 23
+			i = 1; min = 23
+			i = 2; min = 23
+			i = 3; min = 3
+			i = 4; min = 3
+			i = 5; min = 3 
+			i = 6; 
+		3
+		
+3. Display the max digit from a number. Read the number from keyboard
+
+	program "MaxDigitFromNumber" is:
+	start
+		read n
+		if ((n == 0) OR ((n - n % 10) == 0) )
+			then 
+				write n
+			else
+				start
+					max = 0
+					repeat
+						start
+							if (n % 10 > max)
+								then	
+									max = n % 10
+							n = (n - n % 10) / 10
+						end
+					until (n == 0)
+					write max
+				end
+	end
+	
+	---test: 
+		n = 1290781
+		max = -1
+			loop 1: max = 1;  n = 129078
+			loop 2: max = 8;  n = 12907
+			loop 3: max = 8;  n = 1290
+			loop 4: max = 8;  n = 129
+			loop 5: max = 9;  n = 12
+			loop 6: max = 9;  n = 1
+			loop 7: max = 9;  n = 0
+		9
+	
+4. Check if a number is palindrom( e.g palindrom 1221, 34143)
+
+	program "NumberPalindrom" is:
+	start
+		read n
+		statement = "number is palindrom"
+		if ((n == 0) OR ((n - n % 10) == 0) )
+			then 
+				write statement
+			else
+				start
+					m = 0
+					r = n
+					repeat
+						start
+							m = m * 10 + n % 10
+							n = (n - n % 10) / 10
+						end
+					until (n == 0)	
+				end
+		if (m != r)
+			then 
+				statement = "number is NOT palindrom"
+		write statement
+	end
+	
+	---test1: 1221
+		n = 1221
+		m = 0
+		m = 1; n = 122;
+		m = 12; n = 12;
+		m = 122; n = 1;
+		m = 1221; n = 0;
+		"number is palindrom"
+		
+	
+5. Display all the prime numbers lower than a given number
+
+	program "AllPrimesLowerThan" is:
+	start
+		read n
+		for (i = 1; i <= n; i++)
+			start
+				iPrime = true
+				for (k = 2; k<=i/2; k++)
+								if (i % k == 0)
+									start
+										iPime = false
+										break
+									end
+				if (iPrime == true)
+					then
+						write i", "
+			end
+	end
+	
+	---test1: 
+		n = 9
+		i = 1; iPrime = true; k = 2; i/2 = 0; write "1, "
+		i = 2; iPrime = true; k = 2; i/2 = 1; write "2, "
+		i = 3; iPrime = true; k = 2; i/2 = 1; write "3, "
+		i = 4; iPrime = true; k = 2; i/2 = 2; i % k = 0; iPrime = false;
+		i = 5; iPrime = true; k = 2; i/2 = 2; i % k = 1; write "5,"
+		i = 6; iPrime = true; k = 2; i/2 = 3; i % k = 0; iPrime = false;
+		i = 7; iPrime = true; k = 2; i/2 = 3; i % k = 1; 
+							  k = 3; i/2 = 3; i % k = 1; write "7, "
+		i = 8; iPrime = true; k = 2; i/2 = 4; i % k = 0; iPrime = false;
+
+	//comment: final result would be: 1, 2, 3, 5, 7
+	
+6. Input the dimensions of a rectangle and display area and perimeter
+
+	program "RectangleArea" is:
+	start
+		read L,l
+		area = l * L
+		perimeter = 2l + 2L
+		write area
+		write perimeter
+	end
+	
+	---test:
+		L = 2, l = 3
+		area = 6
+		perimeter = 10
+	
+7. Input the length of the side of a square, and display its area.  Produce an error message if the length is negative
+
+	program "SquareArea" is:
+	start
+		read side
+		error = "side cannot be negative"
+		if (side < 0)
+			then 
+				write error
+			else
+				start
+					area = side * side
+					write "area= " area
+				end
+	end
+	
+	---test:
+		side = 4
+		area = 16
+	
+8. Input 3 numbers, and display the biggest.
+
+	program "BiggestOfThree" is:
+	start
+		read sir[0], sir[1], sir[2]
+		max = sir[0]
+		for (i = 1; i<3; i++)
+			if (sir[i] > max)
+				max = sir[i]
+		write max			
+	end
+	
+	---test
+		sir[0] = 3, sir[1] = 7, sir[2] = 0
+		max = 3
+		i = 1;  max = 7
+		i = 2;
+	
+9. Input 2 values:  start  and  finish, then display the numbers from start to finish
+
+	program "NumbersFromStartToFinish" is:
+	start
+		read start, finish
+		if (start<finish)
+			then
+				for (i = start; i<= finish; i++)
+					write i
+			else
+				for (i = start; i>= finish; i--)
+					write i
+	end
+	
+	---test1:
+	start = 8; finish  = 11
+	8, 9, 10, 11
+	
+	---test2:
+	start = 12; finish  = 9
+	12, 11, 10, 9
+	
+	---test3:
+	start = 2; finish  = 2
+	2
+
+10. Read number n and print the first n numbers in Fibonacci sequence. 
+	
+	program "firstNFibonacci" is:
+	start
+		read n
+		e = "n should be at least 1"
+		switch n
+			case (n == 0)
+				write e
+			case (n == 1)
+				write 1
+			case (n == 2)
+				write 1, 1	
+			default
+				start
+					fib1 = 1
+					fib2 = 1
+					write fib1", "fib2
+					for (i = 3; i <= n; i++)
+						start
+							next = fib1 + fib2
+							write ", "next
+							fib1 = fib2
+							fib2 = next
+						end
+				end
+	end
+	
+	---test1:
+		n = 5
+		fib1 = 1; fib2 = 1
+		1, 1  
+		loop 1: i = 3; next = 2
+				, 3
+				fib1 = 1
+				fib2 = 2
+		loop 2: i = 4; next = 3
+				, 3
+				fib1 = 2
+				fib2 = 3
+		loop 3: i = 5; next = 5
+				, 5
+				fib1 = 3
+				fib2 = 5
+
+11. Write pseudo code that will perform the following. 
+	a) Read in 5 separate numbers.
+	b) Calculate the average of the five numbers.
+	c) Find the smallest (minimum) and largest (maxi
+	mum) of the five entered numbers.
+	d) Write out the results found from steps b and c with a message describing what they are
+	
+	program "AverageMinMaxOf5" is:
+	start
+		//commonet: a)
+		sum = 0;
+		for (i = 0; i<5; i++)
+			start
+				read sir[i]
+				sum = sum + sir[i]
+			end
+		
+		//commonet: b)
+		avg = sum / sir.size
+		
+		//commonet: c)
+		min = sir[0]
+		max = sir[0]
+		for (i = 1; i<sir.size; i++)
+			if (sir[i] < min)
+				min = sir[i]
+			if (sir[i] > max)
+				max = sir[i]
+		
+		//commonet: d)
+		write "The average of the "sir.size" numbers you read is:" avg
+		write "The minimum of the "sir.size" numbers you read is:" min
+		write "The maximum of the "sir.size" numbers you read is:" max
+	end
+	
+	---test
+	sum = 0
+		i = 0; sir[0] = 5; sum = 5
+		i = 1; sir[1] = 3; sum = 8
+		i = 2; sir[2] = 0; sum = 8
+		i = 3; sir[3] = 4; sum = 12
+		i = 4; sir[4] = -1; sum = 11
+	avg = 11/5 = 2.2
+	min = 5
+	max = 5
+		i = 1; min = 3
+		i = 2; min = 0
+		i = 3;
+		i = 4;
+		i = 5; min = -1
+		The average of the 5 numbers you read is: 2.2
+		The minimum of the 5 numbers you read is: -1
+		The maximum of the 5 numbers you read is: 5
+		
