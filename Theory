@@ -3,5 +3,5 @@ After you create a Car class, you realize you have more types of cars, you can a
 
 
 Encapsulation
-The process of making methods/fields private if not derectly used. 
+The process of making methods/fields private if not derectly used. (see getters and setters for private members)
 Some methods are just helpers so they can be encapsulated.
