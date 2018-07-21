@@ -1,5 +1,10 @@
+/**
+ * @author Daniel Oraseanu
+ * Tema 4 - Functii
+ */
 package com.siit.oraseanu;
 
+import com.siit.oraseanu.datavalid.DataValidation;
 import com.siit.oraseanu.ftoc.FahrenheitToCelsius;
 import com.siit.oraseanu.max.CalculateMax;
 
@@ -10,6 +15,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner number = new Scanner(System.in);
+
         System.out.println("1. Read three numbers from the console and prints the biggest of them.");
         System.out.print("first number: ");
         int n1 = number.nextInt();
@@ -26,13 +32,19 @@ public class Main {
         System.out.print("Temperature in Fahrenheit:");
         FahrenheitToCelsius fahrenheitToCelsius = new FahrenheitToCelsius();
         n1 = number.nextInt();
-        System.out.print("Your body temperature in Celsius degrees is");
+        System.out.print("Your body temperature in Celsius degrees is ");
         try {
             System.out.println(fahrenheitToCelsius.FToC(n1));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
+        System.out.print("\n3. What time is it?\nPlease enter hours(hh):");
+        String hh = number.next();
+        System.out.print("Please enter minutes(mm):");
+        String mm = number.next();
+        DataValidation dataValidation = new DataValidation();
+        System.out.println(dataValidation.timeIs(hh,mm));
 
     }
 }

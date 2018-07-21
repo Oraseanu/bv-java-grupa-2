@@ -1,6 +1,7 @@
 package com.siit.oraseanu.max;
 
 /**
+ * @author Daniel Oraseanu
  * class that has only a method to return the maximum value from 2 integers.
  */
 public class CalculateMax {
