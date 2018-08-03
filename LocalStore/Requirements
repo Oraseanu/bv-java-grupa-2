@@ -15,9 +15,7 @@ When you run the program it should display a list of options:
 
 1. Create product and add it to stock:
     1.1 Create animal product
-        ...add animal product fields
     1.2 Create vegetal product
-        ...add animal product fields
 2. Sell product
     2.1 from Producer
         2.1.1 to seller [sellers list here]

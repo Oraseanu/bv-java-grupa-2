@@ -11,6 +11,11 @@ public class Seller implements BusinessEntity {
     private double outgoingMoney;
     HashMap<Integer, ProductStock> warehouse = new HashMap<Integer, ProductStock>();
 
+    public Seller(String storeName, double outgoingMoney) {
+        this.storeName = storeName;
+        this.outgoingMoney = outgoingMoney;
+    }
+
     public void supplyWith(int quantity, Product product) {
 
     }
