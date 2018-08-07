@@ -1,0 +1,5 @@
+Sales done on 08/08/2018
+     product name: pig | price: 4.0 | weight: 4.0 | productionDate: Wed Aug 08 02:29:03 EEST 2018 | validity: 4 | keepTemperature=4.0
+     quantity sold:4
+     product name: pateu | price: 4.0 | weight: 4.0 | productionDate: Wed Aug 08 02:30:30 EEST 2018 | validity: 4 | keepTemperature=4.0
+     quantity sold:4

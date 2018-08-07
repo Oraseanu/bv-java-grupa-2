@@ -1,4 +1,4 @@
-package com.siit.oraseanu.app.production;
+package model;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,4 +13,13 @@ public class AnimalProduct extends Product {
         this.keepTemperature = keepTemperature;
     }
 
+    @Override
+    public String toString() {
+        return  "name: " + super.getName() +
+                " | price: " + super.getPrice() +
+                " | weight: " + super.getWeight() +
+                " | productionDate: " + super.getProductionDate() +
+                " | validity: " + super.getValidity() +
+                " | keepTemperature=" + this.keepTemperature;
+    }
 }
