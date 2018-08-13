@@ -3,39 +3,43 @@ package service;
 
 import model.ProductEntity;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.awt.*;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class LoggingServices {
+import static java.lang.System.err;
 
-    public  void appendSalesLog(ProductEntity newSale){
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        String fileName = "DailySalesLog.txt";
-        File log = null;
-        FileWriter writer = null;
+public class LoggingServices {
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    private static final String FILE_NAME = "DailySalesLog.txt";
+    private static final File log = new File(FILE_NAME);
+
+
+    public static void appendSalesLog(ProductEntity newSale){
         Date dateOfLastInputs;
         Date today = new Date();
 
-        try {
-            log = new File(fileName);
-            writer = new FileWriter(log, true);
+        try(FileWriter writer = new FileWriter(log, true)) {
             dateOfLastInputs = new Date(log.lastModified());
             if(!sdf.format(dateOfLastInputs).equals(sdf.format(today))) {
-                writer.write("\nSales done on " + sdf.format(today) + "\n");
+                writer.write("\r\nSales done on " + sdf.format(today) + "\r\n");
             }
-            writer.write("     " + newSale.toString() + "\n");
+            writer.write("     " + newSale.toString() + "\r\n");
 
-        } catch (IOException ioe) {
-            System.err.println("IOException: " + ioe.getMessage());
-        } finally {
-            try {
-                writer.close();
-            } catch (IOException e) {
-                System.err.println("IOException at close: " + e.getMessage());
-            }
+        } catch (Exception e) {
+            err.println("IOException: " + e.getMessage());
+        }
+    }
+
+    public static void listSalesLog() throws IOException{
+        if(!Desktop.isDesktopSupported()){
+            System.out.println("Desktop is not supported");
+            return;
+        }
+        Desktop desktop = Desktop.getDesktop();
+        if(log.exists()){
+            desktop.open(log);
         }
     }
 

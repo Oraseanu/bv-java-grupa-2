@@ -2,7 +2,7 @@ package view;
 
 import service.LoggingServices;
 import service.ProductServices;
-
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class MenuController {
     private final Scanner menuOption = new Scanner(System.in);
     private HashMap<Integer, Actionable> mainMenu = new HashMap<Integer, Actionable>();
     private HashMap<Integer, Actionable> createProductMenu = new HashMap<Integer, Actionable>();
-    ProductServices productServices = new ProductServices();
+    private ProductServices productServices = new ProductServices();
 
     public MenuController() {
         setMainMenu();
@@ -44,7 +44,10 @@ public class MenuController {
         //show daily report
         mainMenu.put(3, new Actionable(){
             public void act() {
-                //showDailySalesReport();
+                try {
+                    LoggingServices.listSalesLog();
+                } catch (IOException e) {
+                }
             }
         });
 

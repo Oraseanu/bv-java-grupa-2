@@ -1,9 +1,7 @@
 package model;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Scanner;
 
 public class AnimalProduct extends Product {
     private double keepTemperature;
@@ -15,10 +13,11 @@ public class AnimalProduct extends Product {
 
     @Override
     public String toString() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         return  "name: " + super.getName() +
                 " | price: " + super.getPrice() +
                 " | weight: " + super.getWeight() +
-                " | productionDate: " + super.getProductionDate() +
+                " | productionDate: " + sdf.format(super.getProductionDate()) +
                 " | validity: " + super.getValidity() +
                 " | keepTemperature=" + this.keepTemperature;
     }

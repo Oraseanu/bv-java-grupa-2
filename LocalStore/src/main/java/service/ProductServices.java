@@ -3,8 +3,6 @@ package service;
 
 import model.*;
 
-import java.text.DateFormat;
-import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -14,7 +12,7 @@ import java.util.Scanner;
 public class ProductServices {
     public Farm farm = new Farm();
     public LocalStore localStore = new LocalStore();
-    LoggingServices loggingServices = new LoggingServices();
+    private LoggingServices loggingServices = new LoggingServices();
 
     public void readAnimalProduct(){
         Scanner inputValue = new Scanner(System.in);
@@ -82,6 +80,7 @@ public class ProductServices {
 
         System.out.println("Product type(animal - a / vegetable - v): ");
         String type = inputValue.nextLine();
+
         if (type.equals("a")) {
             type = "animal products";
         } else if(type.equals("v")){
