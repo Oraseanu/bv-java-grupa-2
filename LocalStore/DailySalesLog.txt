@@ -1,0 +1,6 @@
+     product name: v3 | price: 5.0 | weight: 5.0 | productionDate: 13/08/2018 | validity: 5 | vitamins=[a1]
+     quantity sold:6
+     product name: an1 | price: 3.0 | weight: 3.0 | productionDate: 13/08/2018 | validity: 3 | keepTemperature=3.0
+     quantity sold:3
+     product name: an1 | price: 4.0 | weight: 4.0 | productionDate: 13/08/2018 | validity: 4 | keepTemperature=4.0
+     quantity sold:3
