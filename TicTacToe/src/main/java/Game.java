@@ -1,10 +1,11 @@
+import sun.awt.Symbol;
+
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Game implements Drawable, Playeable{
+public class Game implements Drawable, Playable {
     private char[][] moves = new char[3][3];
     private Player x,o;
-
-
 
     private void initializeBoard(){
         System.out.println("populating moves with default \"_\" ");
@@ -21,17 +22,37 @@ public class Game implements Drawable, Playeable{
         this.o = o;
     }
 
-//    public boolean gameEnded(){
-//
-//    }
-//
-//    public boolean playerWon(){
-//
+    public Player checkGameStatus(Player p){
+        boolean gameWon = false;
+        char winnerSymbol;
+        for(int k = 0; k < 3 ; k++){
+            if ((moves[0][k] == moves[1][k] && moves[1][k] == moves [2][k]) ||
+                (moves[k][0] == moves[k][1] && moves[k][1] == moves [k][2])){
+                gameWon = true;
+                return p;
+            }
+        }
+        if ((moves [0][0] == moves[1][1] && moves[1][1] == moves[2][2])||
+                (moves[0][2] == moves[1][1] && moves[1][1] == moves[2][0])){
+            gameWon = true;
+            return p;
+        }
+        return //other player
+
+    }
 
 
+    public void start() {
+        this.initializeBoard();
+        Player p = this.x;
+        do{
+            this.play(p);
+            p = checkGameStatus(p);
+        }while (p!=null);
 
 
-//    }
+    }
+
 
     private boolean cellIsFree(int row, int col){
         boolean result = false;
@@ -57,13 +78,13 @@ public class Game implements Drawable, Playeable{
         return result;
     }
 
-    private void playerMove(Player p){
+    public void play(Player p){
         String userText;
         int k = 0;
         int row, col;
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Player " + p.getSide() + ", enter your move (row[1-3] column[1-3]):");
+        System.out.print("Player " + p.getSymbol() + ", enter your move (row[1-3] column[1-3]):");
         userText = input.nextLine();
 
         do{
@@ -71,7 +92,7 @@ public class Game implements Drawable, Playeable{
             row = (int) Character.getNumericValue(userText.charAt(0))-1;
             col = (int) Character.getNumericValue(userText.charAt(2))-1;
             if (cellIsFree(row, col)) {
-                this.moves[row][col] = p.getSide();
+                this.moves[row][col] = p.getSymbol();
                 break;
             } else {
                 userText = input.nextLine();
@@ -93,14 +114,6 @@ public class Game implements Drawable, Playeable{
         draw();
     }
 
-    @Override
-    public void play() {
-        this.initializeBoard();
-        playerMove(x);
-        playerMove(o);
-
-
-    }
 
     @Override
     public void draw() {

@@ -1,13 +1,13 @@
 public class Player {
-    private char side;
+    private char symbol;
 
-    public char getSide() {
-        return side;
+    public char getSymbol() {
+        return symbol;
     }
     private static int gamesWon = 0, gamesLost = 0, gamesDrawn = 0;
 
-    public Player(char side) {
-        this.side = side;
+    public Player(char symbol) {
+        this.symbol = symbol;
     }
 
 }
