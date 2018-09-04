@@ -4,7 +4,7 @@ public class TicTacToeApp {
         Player ai = new Player('o');
 
         Game game1 = new Game(dani,ai);
-        game1.start();
+        game1.playGame();
 
     }
 }
