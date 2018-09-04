@@ -1,3 +1,8 @@
+/**
+ * TicTacToe app
+ * @author Oraseanu Daniel
+ */
+
 import java.util.Scanner;
 
 public class TicTacToeApp {

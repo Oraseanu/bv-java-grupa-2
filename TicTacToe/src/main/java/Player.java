@@ -1,3 +1,8 @@
+/**
+ * Class for player
+ * Can remember games won/lost/drawn
+ * Player has name and symbol (x or o)
+ */
 public class Player {
     private char symbol;
     private String name;
