@@ -19,6 +19,14 @@ public class Game implements Drawable, Playable {
         players.put(o.getSymbol(), o);
     }
 
+    public void setMove(int row, int col, char value) {
+        this.moves[row][col] = value;
+    }
+
+    public char getMove(int row, int col) {
+        return moves[row][col];
+    }
+
     /**
      * Populates the board with empty cells represented by character "_"
      */
@@ -53,9 +61,9 @@ public class Game implements Drawable, Playable {
      * @param col the column of questioned cell
      * @return true if the cell is free
      */
-    private boolean cellIsFree(int row, int col) {
+    public boolean cellIsFree(int row, int col) {
         boolean result = false;
-        if (moves[row][col] == '_') {
+        if (moves[row][col] != 'x' && moves[row][col] != 'o') {
             result = true;
         } else {
             System.out.print(
@@ -71,7 +79,7 @@ public class Game implements Drawable, Playable {
      * @param userText user input text
      * @return true if input is correct and therefore can be converted into integer later on
      */
-    private boolean inputIsValid(String userText) {
+    public boolean inputIsValid(String userText) {
         boolean result = false;
         if (userText.matches("[1-3] [1-3]")) {
             result = true;
@@ -90,8 +98,12 @@ public class Game implements Drawable, Playable {
      * @param c3 cell 3
      * @return true if all chars are equal and not '_'
      */
-    private boolean equalAndNotEmpty(char c1, char c2, char c3) {
-        if (c1 == '_' || c2 == '_' || c3 == '_') {
+    public boolean equalAndNotEmpty(char c1, char c2, char c3) {
+        List<Character> validValues = new ArrayList<>();
+        validValues.add('x');
+        validValues.add('o');
+
+        if (!validValues.contains(c1) || !validValues.contains(c2) || !validValues.contains(c1)) {
             return false;
         } else {
             if (c1 == c2 && c2 == c3) {
@@ -117,12 +129,12 @@ public class Game implements Drawable, Playable {
 
         for (int k = 0; k < 3; k++) {
             if (equalAndNotEmpty(moves[0][k], moves[1][k], moves[2][k]) ||
-                    equalAndNotEmpty(moves[k][0], moves[k][1], moves[k][2])) {
+                equalAndNotEmpty(moves[k][0], moves[k][1], moves[k][2])) {
                 gameWon = true;
             }
         }
         if (equalAndNotEmpty(moves[0][0], moves[1][1], moves[2][2]) ||
-                equalAndNotEmpty(moves[0][2], moves[1][1], moves[2][0])) {
+            equalAndNotEmpty(moves[0][2], moves[1][1], moves[2][0])) {
             gameWon = true;
         }
         if (gameWon) {
