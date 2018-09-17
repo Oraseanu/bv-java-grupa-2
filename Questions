@@ -7,11 +7,11 @@ presentation tier:
  
 app tier:
  - java web app (server side)
- *web API swagger*
- *SPRING app with MVC architecture*
- *hibernate - java based config*
- *Gradle - for dependency management and build*
- *Jenkins - for continuous integration & deployment*
+ * web API swagger *
+ * SPRING app with MVC architecture *
+ * hibernate - java based config *
+ * Gradle - for dependency management and build *
+ * Jenkins - for continuous integration & deployment *
   
 data tier:
  - MySQL database 
