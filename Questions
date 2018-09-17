@@ -1,1 +1,17 @@
 Intelij - de ce de fiecare data trebuie sa intru la Open Module Settings sa repar caile catre foldere?
+
+App: 
+
+presentation tier:
+ - webpage (client side - Postman for now)
+ 
+app tier:
+ - java web app (server side)
+ *web API swagger*
+ *SPRING app with MVC architecture*
+ *hibernate - java based config*
+ *Gradle - for dependency management and build*
+ *Jenkins - for continuous integration & deployment*
+  
+data tier:
+ - MySQL database 
