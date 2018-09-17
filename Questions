@@ -1,4 +1,8 @@
-Intelij - de ce de fiecare data trebuie sa intru la Open Module Settings sa repar caile catre foldere?
+Q: Intelij - de ce de fiecare data trebuie sa intru la Open Module Settings sa repar caile catre foldere?
+A: gradle strica buildul
+
+Q: Cum interpretam <T> inainte de o metoda generica: <T> MyColl<T> myMethod(){}
+A: 
 
 App: 
 
