@@ -2,6 +2,12 @@ Q: Intelij - de ce de fiecare data trebuie sa intru la Open Module Settings sa r
 A: gradle strica buildul
 
 Q: Cum interpretam <T> inainte de o metoda generica: <T> MyColl<T> myMethod(){}
+A: <T> dinaintea metodei anunta metoda ca se va folosi tipul T in ea, iar ea nu are nici o declaratie a vreunei variablie de tip T in ea
+
+Q: PECS (Producer extends | Consumer super) - who is who?
+A: 
+
+Q: Box<T> s potriveste bine ca decorator pt T?
 A: 
 
 App: 
