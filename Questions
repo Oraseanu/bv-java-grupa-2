@@ -5,9 +5,13 @@ Q: Cum interpretam <T> inainte de o metoda generica: <T> MyColl<T> myMethod(){}
 A: <T> dinaintea metodei anunta metoda ca se va folosi tipul T in ea, iar ea nu are nici o declaratie a vreunei variablie de tip T in ea
 
 Q: PECS (Producer extends | Consumer super) - who is who?
-A: 
+* A: am inteles. - De facut un answer pe StackOverflow sa verific ca e corect ce am inteles. *
 
 Q: Box<T> s potriveste bine ca decorator pt T?
+A: da
+
+Q: In ce directie se modifica obiectele unele pe altele? 
+De obicei daca am 2 obiecte x y atunci amandoua se vor contine pe ele insle. Mi se pare ciudat
 A: 
 
 App: 
