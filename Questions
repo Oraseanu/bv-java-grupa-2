@@ -21,7 +21,7 @@ Q: Cum extind JPArepository fara sa rescriu metodele default implementate de Spr
 A: 
 
 Q: How Lazy loading happens?
-A: 
+A: You create an object with null variables then when you need it use getInstance which instantiates the variables with values.
 
 App: 
 
