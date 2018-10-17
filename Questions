@@ -20,6 +20,9 @@ A:
 Q: Cum extind JPArepository fara sa rescriu metodele default implementate de Spring Data JPA
 A: 
 
+Q: How Lazy loading happens?
+A: 
+
 App: 
 
 presentation tier:
