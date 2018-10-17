@@ -5,10 +5,15 @@ Q: Cum interpretam <T> inainte de o metoda generica: <T> MyColl<T> myMethod(){}
 A: <T> dinaintea metodei anunta metoda ca se va folosi tipul T in ea, iar ea nu are nici o declaratie a vreunei variablie de tip T in ea
 
 Q: PECS (Producer extends | Consumer super) - who is who?
-* A: am inteles. - De facut un answer pe StackOverflow sa verific ca e corect ce am inteles. *
+A: Am postat pe StackOverflow
+
+Q: How Lazy loading happens?
+A: You create an object with null variables then when you need it use getInstance which instantiates the variables with values.
 
 Q: Box<T> s potriveste bine ca decorator pt T?
 A: da
+
+---------------------------------------------------------------------------
 
 Q: In ce directie se modifica obiectele unele pe altele? 
 De obicei daca am 2 obiecte x y atunci amandoua se vor contine pe ele insle. Mi se pare ciudat
@@ -20,8 +25,11 @@ A:
 Q: Cum extind JPArepository fara sa rescriu metodele default implementate de Spring Data JPA
 A: 
 
-Q: How Lazy loading happens?
-A: You create an object with null variables then when you need it use getInstance which instantiates the variables with values.
+http://localhost:8080/location/?id={{Location_id}} sau
+http://localhost:8080/location?id={{Location_id}} sunt la fel ca 
+http://localhost:8080/location
+Q: De ce?
+A: 
 
 App: 
 
