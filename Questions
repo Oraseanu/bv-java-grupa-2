@@ -38,3 +38,6 @@ app tier:
   
 data tier:
  - MySQL database 
+ 
+ my app tips:
+  - Make objects lazily loaded
