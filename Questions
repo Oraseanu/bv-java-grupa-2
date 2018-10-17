@@ -14,6 +14,12 @@ Q: In ce directie se modifica obiectele unele pe altele?
 De obicei daca am 2 obiecte x y atunci amandoua se vor contine pe ele insle. Mi se pare ciudat
 A: 
 
+Q: http://jqno.nl/equalsverifier/manual/final/ - de ce sa fac clasele finale, cand da si cand nu?
+A:
+
+Q: Cum extind JPArepository fara sa rescriu metodele default implementate de Spring Data JPA
+A: 
+
 App: 
 
 presentation tier:
